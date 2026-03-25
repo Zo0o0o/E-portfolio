@@ -40,6 +40,17 @@ nav {
     color: #f3f3f3;
 }
 
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.logo-link:hover {
+    opacity: 0.7;
+}
+
 nav ul {
     display: flex;
     gap: 30px;
