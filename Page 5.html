@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean Enzo | Model Portfolio</title>
+    <link rel="stylesheet" href="Pags 1 (CSS).css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SEAN ENZO</div>
+        <ul>
+            <li><a href="My E-portfolio.html">Portfolio</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="Contact page.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="gallery">
+        <section class="viewport-gallery">
+            
+            <div class="collage-side">
+                <div class="collage-grid">
+                    <div class="small-photo">
+                        <img src="75b23d7d-abd5-4762-970c-7ea1e8ef673b.jpg" onmouseover="changeImage(this.src)" alt="Port 1">
+                    </div>
+                    <div class="small-photo">
+                        <img src="72fcacd0-fac9-4480-9119-7300c7e6b0cf.jpg" onmouseover="changeImage(this.src)" alt="Port 2">
+                    </div>
+                    <div class="small-photo">
+                        <img src="4d0e8493-84c7-4de8-9181-28262923a19d.jpg" onmouseover="changeImage(this.src)" alt="Port 3">
+                    </div>
+                    <div class="small-photo">
+                        <img src="ed47dffb-3b99-4529-90dc-ebeae11072cd.jpg" onmouseover="changeImage(this.src)" alt="Port 4">
+                    </div>
+                    
+                </div>
+                <div class="collage-text">
+                    <h2>Portfolio</h2>
+                    <p>Hover to Preview</p>
+                </div>
+            </div>
+
+            <div class="main-side">
+                <img id="mainHero" src="4d0e8493-84c7-4de8-9181-28262923a19d.jpg" alt="Main Feature">
+            </div>
+
+        </section>
+    </main>
+
+    <section id="stats">
+        <h2>Measurements</h2>
+        <table>
+            <tr><td>Height</td><td>183 cm</td></tr>
+            <tr><td>Waist</td><td>33"</td></tr>
+            <tr><td>Shoe</td><td>10.5</td></tr>
+            <tr><td>Tops</td><td>Large</td></tr>
+            <tr><td>Bottoms</td><td>Medium</td></tr>
+            <tr><td>Hair</td><td>Black</td></tr>
+            <tr><td>Eyes</td><td>Brown</td></tr>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Bookings</h2>
+        <a href="mailto:seanenzotorrano@gmail.com">seanenzotorrano@gmail.com</a>
+    </section>
+
+    <footer>
+        <p>© 2026 Sean Enzo B. Torrano. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function changeImage(newSrc) {
+            const mainImg = document.getElementById('mainHero');
+            mainImg.style.opacity = '0.3';
+            setTimeout(() => {
+                mainImg.src = newSrc;
+                mainImg.style.opacity = '1';
+            }, 100);
+        }
+    </script>
+
+</body>
+</html>

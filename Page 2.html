@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean Enzo | Model Portfolio</title>
+    <link rel="stylesheet" href="Pags 1 (CSS).css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SEAN ENZO</div>
+        <ul>
+            <li><a href="My E-portfolio.html">Portfolio</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="Contact page.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="gallery">
+        <section class="viewport-gallery">
+            
+            <div class="collage-side">
+                <div class="collage-grid">
+                    <div class="small-photo">
+                        <img src="20db6fab-277f-4940-b561-b11aeb9aaa80.jpg" onmouseover="changeImage(this.src)" alt="Port 1">
+                    </div>
+                    <div class="small-photo">
+                        <img src="bbf30c72-feaf-4a10-835b-49c7ae682e6e.jpg" onmouseover="changeImage(this.src)" alt="Port 2">
+                    </div>
+                    <div class="small-photo">
+                        <img src="bdff517a-7860-4e67-8a41-7744dad47b13.jpg" onmouseover="changeImage(this.src)" alt="Port 3">
+                    </div>
+                    <div class="small-photo">
+                        <img src="d5d25389-855e-44f8-88b1-667e542f7f63.jpg" onmouseover="changeImage(this.src)" alt="Port 4">
+                    </div>
+                    <div class="small-photo">
+                        <img src="71807074-14ae-4262-9fba-6a9b7ba1ccce.jpg" onmouseover="changeImage(this.src)" alt="Port 4">
+                    </div>
+                    <div class="small-photo">
+                        <img src="38908fd1-7d69-43c2-a58e-d27d069e3d92.jpg" onmouseover="changeImage(this.src)" alt="Port 4">
+                    </div>
+                </div>
+                <div class="collage-text">
+                    <h2>Portfolio</h2>
+                    <p>Hover to Preview</p>
+                </div>
+            </div>
+
+            <div class="main-side">
+                <img id="mainHero" src="71807074-14ae-4262-9fba-6a9b7ba1ccce.jpg" alt="Main Feature">
+            </div>
+
+        </section>
+    </main>
+
+    <section id="stats">
+        <h2>Measurements</h2>
+        <table>
+            <tr><td>Height</td><td>183 cm</td></tr>
+            <tr><td>Waist</td><td>33"</td></tr>
+            <tr><td>Shoe</td><td>10.5</td></tr>
+            <tr><td>Tops</td><td>Large</td></tr>
+            <tr><td>Bottoms</td><td>Medium</td></tr>
+            <tr><td>Hair</td><td>Black</td></tr>
+            <tr><td>Eyes</td><td>Brown</td></tr>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Bookings</h2>
+        <a href="mailto:seanenzotorrano@gmail.com">seanenzotorrano@gmail.com</a>
+    </section>
+
+    <footer>
+        <p>© 2026 Sean Enzo B. Torrano. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function changeImage(newSrc) {
+            const mainImg = document.getElementById('mainHero');
+            mainImg.style.opacity = '0.3';
+            setTimeout(() => {
+                mainImg.src = newSrc;
+                mainImg.style.opacity = '1';
+            }, 100);
+        }
+    </script>
+
+</body>
+</html>

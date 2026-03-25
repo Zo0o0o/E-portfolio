@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean Enzo | Model Portfolio</title>
+    <link rel="stylesheet" href="Style {.css"> <!-- FIXED -->
+</head>
+<body>
+
+<nav>
+    <div class="logo">SEAN ENZO</div>
+    <ul>
+        <li><a href="#gallery">Portfolio</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="Contact page.html">Contact</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>SEAN ENZO</h1>
+    <p>Model • Editorial • Commercial</p>
+</header>
+
+<section id="gallery">
+    <div class="section-header">
+        <h2>Portfolio</h2>
+    </div>
+
+    <div class="gallery-grid">
+        <div class="photo">
+            <a href="Page 4.html">
+                <img src="d3a214bc-d216-4d21-b1cd-8a757e9d2980.jpg">
+            </a>
+        </div>
+
+        <div class="photo">
+            <img src="d3b7d5be-b793-4892-9253-4fb29b44ef2a.jpg">
+        </div>
+
+        <div class="photo">
+            <img src="cbd758d2-15d8-4832-9310-4b7ce654584b.jpg">
+        </div>
+
+        <div class="photo">
+            <a href="Page 1.html">
+                <img src="aad6b8b1-550c-4b1e-b0d7-cd4d2e288191.jpg">
+            </a>
+        </div>
+
+        <div class="photo">
+            <a href="Page 3.html">
+                <img src="3d3c1659-85dd-4cc8-b423-383c94fc15d4.jpg">
+            </a>
+        </div>
+
+        <div class="photo">
+            <a href="Page 5.html">
+                <img src="6901b40a-7d62-47bb-896e-331fcfaec367.jpg">
+            </a>
+        </div>
+
+        <div class="photo">
+            <a href="Page 2.html">
+                <img src="6e9f007c-219b-433f-8e4c-ff6cfd3b5794.jpg">
+            </a>
+        </div>
+
+        <div class="photo">
+            <img src="d3e389e4-9ecb-47fe-96c3-66fb569c3dc1.jpg">
+        </div>
+    </div>
+</section>
+
+<section id="stats">
+  <div class="stats-wrapper">
+
+    <div class="stats-title fade-in">
+      <h2>Measurements</h2>
+    </div>
+
+    <table class="fade-in">
+      <tr><td>Height</td><td class="stat" data-value="183">183 cm</td></tr>
+      <tr><td>Waist</td><td>33"</td></tr>
+      <tr><td>Shoe</td><td>10.5</td></tr>
+      <tr><td>Tops</td><td>Large</td></tr>
+      <tr><td>Bottoms</td><td>Medium</td></tr>
+      <tr><td>Hair</td><td>Black</td></tr>
+      <tr><td>Eyes</td><td>Brown</td></tr>
+    </table>
+
+  </div>
+</section>
+
+<section id="contact">
+    <h2>Bookings</h2>
+    <p>Email for collaborations</p>
+    <a href="mailto:seanenzotorrano@gmail.com">seanenzotorrano@gmail.com</a>
+</section>
+
+<footer>
+    <p>© 2026 Sean Enzo</p>
+</footer>
+
+<!-- ✅ JAVASCRIPT GOES RIGHT HERE -->
+<script>
+/* FADE IN ON SCROLL */
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+
+/* CLEAN NUMBER ANIMATION */
+const stat = document.querySelector('.stat');
+
+if (stat) {
+  let started = false;
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !started) {
+      started = true;
+
+      let start = 0;
+      let end = parseInt(stat.dataset.value);
+      let duration = 800;
+      let startTime = null;
+
+      function animate(time) {
+        if (!startTime) startTime = time;
+        let progress = time - startTime;
+        let value = Math.min(Math.floor(progress / duration * end), end);
+        stat.textContent = value + " cm";
+        if (value < end) requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+    }
+  }, { threshold: 0.5 });
+
+  observer.observe(stat);
+}
+</script>
+
+</body>
+</html>

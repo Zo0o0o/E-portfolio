@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #111;          /* Dark background */
+    color: #eaeaea;            /* Soft white text */
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 10%;
+    position: sticky;
+    top: 0;
+    background: rgba(17,17,17,0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid #222;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+    color: #f3f3f3;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+/* underline animation */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f3f3f3;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ========================= */
+/* CONTACT PAGE LAYOUT */
+/* ========================= */
+
+.viewport-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 85vh;
+}
+
+/* LEFT SIDE */
+.collage-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    background: #181818;        /* Dark background */
+    border-right: 1px solid #222;
+}
+
+.collage-text {
+    max-width: 320px;
+    color: #eaeaea;
+}
+
+.subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #999;
+}
+
+.collage-text h2 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin: 10px 0;
+    letter-spacing: 3px;
+    color: #f3f3f3;
+}
+
+.collage-text p {
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* RIGHT SIDE */
+.main-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    background: #111;
+}
+
+/* CONTACT CARD */
+.contact-card {
+    max-width: 400px;
+    width: 100%;
+    color: #eaeaea;
+}
+
+.contact-group {
+    margin-bottom: 30px;
+}
+
+.label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.contact-link:hover {
+    opacity: 0.6;
+}
+
+/* SOCIAL LINKS */
+.social-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.social-links li {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.social-links a span {
+    margin-left: 5px;
+}
+
+.social-links a:hover {
+    letter-spacing: 2px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 50px;
+    font-size: 0.6rem;
+    color: #666;
+    letter-spacing: 2px;
+    background: #0d0d0d;
+    border-top: 1px solid #222;
+}
+
+/* ANIMATION */
+.collage-text,
+.contact-card {
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 15px 6%;
+    }
+
+    .viewport-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .collage-side,
+    .main-side {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .collage-text h2 {
+        font-size: 2rem;
+    }
+}
